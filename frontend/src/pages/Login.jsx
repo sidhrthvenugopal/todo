@@ -10,7 +10,7 @@ function Login() {
   async function handleLogin(event) {
     event.preventDefault()
     try {
-    const res = await axios.post("http://localhost:5550/api/authority/login", {
+    const res = await axios.post("https://todo-alpha.vercel.app/api/authority/login", {
         email,
         password
     });

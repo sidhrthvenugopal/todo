@@ -12,7 +12,7 @@ function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(Boolean(localStorage.getItem('token')))
 
   const fetchBlogs = useCallback(() => {
-    return axios.get('http://localhost:5550/api/home/blog')
+    return axios.get('https://todo-alpha.vercel.app/api/home/blog')
       .then((response) => setBlogs(response.data))
       .catch(() => setNotice('Unable to load blogs. Please try again.'))
   }, [])
@@ -35,7 +35,7 @@ function Home() {
 
     try {
       await axios.post(
-        'http://localhost:5550/api/home/addblog',
+        'https://todo-alpha.vercel.app/api/home/addblog',
         { title, content },
         {
           headers: {

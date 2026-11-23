@@ -18,7 +18,7 @@ function Myblog() {
       return 
     }
 
-    return axios.get("http://localhost:5550/api/home/myblogs", {
+    return axios.get("https://todo-alpha.vercel.app/api/home/myblogs", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => setBlogs(response.data))
@@ -52,7 +52,7 @@ function Myblog() {
     const token = localStorage.getItem('token')
 
     try {
-      await axios.put(`http://localhost:5550/api/home/update/${editingBlog._id}`,
+      await axios.put(`https://todo-alpha.vercel.app/api/home/update/${editingBlog._id}`,
         { title, content },
         { headers: { Authorization: `Bearer ${token}` } },
     )
@@ -67,7 +67,7 @@ function Myblog() {
         const token = localStorage.getItem('token')
 
       try {
-        const res=await axios.delete(`http://localhost:5550/api/home/delete/${blogId}`,{
+        const res=await axios.delete(`https://todo-alpha.vercel.app/api/home/delete/${blogId}`,{
            headers: { Authorization: `Bearer ${token}` },
         })
         alert("are you sure to delete")
